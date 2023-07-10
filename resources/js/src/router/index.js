@@ -11,6 +11,12 @@ import store from '../store';
 const routes = [
     //dashboard
     { path: '/', name: 'Home', component: Home },
+    {
+        path: '/',
+        name: 'Home',
+        component: () => import(/* webpackChunkName: "auth-login" */ '../views/auth/login.vue'),
+        meta: { layout: 'auth' },
+    },
 
     {
         path: '/index2',
